@@ -2,7 +2,6 @@
 """
 Task 12's module.
 """
-
 from pymongo import MongoClient
 
 
@@ -10,7 +9,6 @@ def print_nginx_request_logs(nginx_collection):
     """
     Prints stats about Nginx request logs.
     """
-
     print('{} logs'.format(nginx_collection.count_documents({})))
     print('Methods:')
     methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
@@ -30,7 +28,6 @@ def run():
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     print_nginx_request_logs(client.logs.nginx)
-
 
 if __name__ == '__main__':
     run()
